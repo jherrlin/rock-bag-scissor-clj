@@ -1,0 +1,53 @@
+{:paths ["resources" "src" "test" "classes"]
+ :deps  {com.stuartsierra/component      {:mvn/version "1.0.0"}
+         org.clojure/core.match {:mvn/version "1.0.0"}
+
+         com.taoensso/sente              {:mvn/version "1.16.2"}
+         com.taoensso/timbre             {:mvn/version "5.1.2"}
+         day8.re-frame/http-fx           {:mvn/version "0.2.3"}
+         reagent-utils/reagent-utils     {:mvn/version "0.3.3"}
+         com.smxemail/re-frame-cookie-fx {:mvn/version "0.0.2"}
+         day8.re-frame/undo              {:mvn/version "0.3.3"}
+         etaoin/etaoin                   {:mvn/version "0.4.1"}
+         hiccup/hiccup                   {:mvn/version "1.0.5"}
+         http-kit/http-kit               {:mvn/version "2.5.3"}
+         medley/medley                   {:mvn/version "1.3.0"}
+         metosin/reitit                  {:mvn/version "0.5.13"}
+         nrepl/nrepl                     {:mvn/version "0.8.3"}
+         ovotech/ring-jwt                {:mvn/version "2.2.1"}
+         org.clojure/clojure             {:mvn/version "1.10.3"}
+         org.clojure/clojurescript       {:mvn/version "1.10.844"}
+         org.clojure/data.csv            {:mvn/version "1.0.0"}
+         org.clojure/core.async          {:mvn/version "1.3.618"}
+         org.clojure/test.check          {:mvn/version "1.1.0"}
+         org.clojure/tools.namespace     {:mvn/version "1.1.0"}
+         re-frame/re-frame               {:mvn/version "1.2.0"}
+         ring/ring-defaults              {:mvn/version "0.3.2"}
+         ring/ring-json                  {:mvn/version "0.5.1"}
+         thheller/shadow-cljs            {:mvn/version "2.12.5"}
+         yogthos/config                  {:mvn/version "1.1.7"}}
+
+ :aliases {:dev    {:extra-paths ["dev"]
+                    :extra-deps  {binaryage/devtools         {:mvn/version "1.0.2"}
+                                  day8.re-frame/tracing      {:mvn/version "0.6.2"}
+                                  day8.re-frame/re-frame-10x {:mvn/version "1.0.2"}}}
+           :reveal {:extra-deps {vlaaad/reveal {:mvn/version "1.3.198"}}
+                    :ns-default vlaaad.reveal
+                    :exec-fn    repl}
+           :runner {:main-opts ["-m" "cognitect.test-runner"]}
+           :test   {:extra-paths ["test"]
+                    :extra-deps  {com.cognitect/test-runner {:git/url "https://github.com/cognitect-labs/test-runner.git"
+                                                             :sha     "b6b3193fcc42659d7e46ecd1884a228993441182"}
+                                  day8.re-frame/test        {:mvn/version "0.1.5"}}}
+
+           :cljs-runner {:extra-deps {org.clojure/clojurescript     {:mvn/version "1.10.773"}
+                                      day8.re-frame/test            {:mvn/version "0.1.5"}
+                                      karma-reporter/karma-reporter {:mvn/version "3.1.0"}}
+                         :main-opts  ["-m"  "cljs.main"
+                                      "-c"  "se.jherrlin.test_runner"
+                                      "-r"]}
+
+           :uberjar  {:extra-deps {uberdeps/uberdeps {:mvn/version "1.0.2"}}
+                      :main-opts  ["-m" "uberdeps.uberjar"]}
+           :outdated {:extra-deps {olical/depot {:mvn/version "2.0.1"}}
+                      :main-opts  ["-m" "depot.outdated.main"]}}}
