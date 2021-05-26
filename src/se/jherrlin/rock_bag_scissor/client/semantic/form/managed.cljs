@@ -5,7 +5,6 @@
             [clojure.spec.alpha :as s]
             se.jherrlin.rock-bag-scissor.client.form.events
             ["semantic-ui-react" :as semantic-ui]
-            ["semantic-ui-calendar-react" :as semantic-ui-calendar]
             [clojure.string :as str]))
 
 
@@ -47,6 +46,6 @@
        :options   options
        :onChange  (fn [_ data]
                     (let [{:keys [value]} (js->clj data :keywordize-keys true)]
-                      (re-frame/dispatch [:form-value form attr value])))
+                      (re-frame/dispatch [:form-value form attr (keyword value)])))
        :error     (error-fn @value)}
       props)]))
