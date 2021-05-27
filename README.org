@@ -1,0 +1,24 @@
+#+TITLE: rock-bag-scissor-clj
+#+AUTHOR: John Herrlin
+
+* Overview
+
+  =rock-bag-scissor-clj= is a small "fullstack" Clojure/Script app where you can
+  play the Rock Bag Scissor game.
+
+* Server
+
+  The server is using [[https://github.com/stuartsierra/component][Component]] to orchestra statefull components and help with
+  a better REPL driven development experience. [[https://github.com/metosin/reitit][Reitit]] is used routing and
+  [[https://github.com/http-kit/http-kit][Http-kit]] as web server.
+
+* Client
+
+  The client uses a React wrapper called [[https://reagent-project.github.io/][Reagent]]. State is managed with [[https://github.com/day8/re-frame][Re-frame]]
+  and is a single datastore. The UI goodness is provided via [[https://react.semantic-ui.com/][Semantic UI]]'s React
+  wrapper.
+
+* Shared
+
+  The domain model =game= and the related business logic is made in cljc files
+  and is compatible with both the frontend code and the backend code.
